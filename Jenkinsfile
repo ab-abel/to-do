@@ -6,18 +6,17 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-                sh 'echo building' 
+                sh 'pip3 install -r requirements.txt' 
             }
         }
         stage('Test'){
             steps {
-                sh 'echo testing'
-                junit 'reports/**/*.xml' 
+                sh 'python3 manage.py test'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'echo  deploying'
+                sh 'echo  deploying to production'
             }
         }
     }
