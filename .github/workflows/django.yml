@@ -36,6 +36,7 @@ jobs:
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         DB_USER: ${{ secrets.DB_USER }}
         TIME_ZONE: ${{ env.TIME_ZONE }}
+        DEBUG: ${{ env.DEBUG }}
         
       run: |
         python manage.py test
