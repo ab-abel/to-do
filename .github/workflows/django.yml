@@ -8,14 +8,14 @@ on:
 env:
   SECRET_KEY: ${{ secrets.SECRET_KEY }}
   ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
-  DB_ENGINE: ${{ env.DB_ENGINE }}
-  DB_NAME: ${{ env.DB_NAME }}
-  DB_HOST: ${{ env.DB_HOST }}
-  DB_PORT: ${{ env.DB_PORT }}
-  DB_PASSWORD: ${{ env.DB_PASSWORD }}
-  DB_USER: ${{ env.DB_USER }}
-  TIME_ZONE: ${{ env.TIME_ZONE }}
-  DEBUG: ${{ env.DEBUG }}
+  DB_ENGINE: ${{ secrets.DB_ENGINE }}
+  DB_NAME: ${{ secrets.DB_NAME }}
+  DB_HOST: ${{ secrets.DB_HOST }}
+  DB_PORT: ${{ secrets.DB_PORT }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+  DB_USER: ${{ secrets.DB_USER }}
+  TIME_ZONE: ${{ secrets.TIME_ZONE }}
+  DEBUG: ${{ secrets.DEBUG }}
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.8, 3.9]
 
     steps:
     - uses: actions/checkout@v3
