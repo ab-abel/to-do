@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "master" ]
 env:
-  SECRET_KEY: ${{ env.SECRET_KEY }}
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
   ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
   DB_ENGINE: ${{ env.DB_ENGINE }}
   DB_NAME: ${{ env.DB_NAME }}
